@@ -30,6 +30,7 @@ type = sys.argv[1]
 if __name__ == '__main__':
     status = KeepStrong().server_probing()
     input_list = sys.argv
+    print(input_list)
     if "firefox" in input_list:
         input_list.remove("firefox")
         GlobalVar().set_value("firefox")
