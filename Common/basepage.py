@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -40,6 +41,25 @@ class BasePage:
             end_time = time.time()
             duration = end_time - start_time
             logger.logging.info("等待{}元素可见,耗时{}".format(loc, duration))
+
+    #悬停在一个元素上
+
+    def stay(self,loc,doc=''):
+        try:
+            a=self.driver.find_element(*doc)
+            actions = ActionChains(self.driver)
+            actions.move_to_element(a).perform()
+
+
+        except:
+            logger.logging.exception("等待 {} 元素存在，失败！".format(loc))
+            self.do_save_screenshot(doc)
+            return False
+        else:
+            logger.logging.info("查找{}的元素{}成功。".format(doc, loc))
+            return True
+
+
 
     # 查找元素
     def is_element_exsits(self, loc, doc=""):

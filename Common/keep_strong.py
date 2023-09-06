@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from ui.TestDatas.global_datas import GlobalDatas
+# from ui.TestDatas.global_datas import GlobalDatas
 import requests
 
 import os

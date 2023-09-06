@@ -17,3 +17,9 @@ class HuangchangPageLocator:
     #侧边栏，可以判断是否有比赛
     corn=(By.XPATH,'//*[@id="app"]/div[2]/div[2]/div/div[2]/ul/li[1]/img')
 
+    #获取直播间标题
+    title=(By.XPATH,'//*[@id="app"]/div[2]/div/div[2]/div/div[3]/div[1]/div/div[1]')
+
+
+
+
