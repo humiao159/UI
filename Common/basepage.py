@@ -46,7 +46,7 @@ class BasePage:
 
     def stay(self,loc,doc=''):
         try:
-            a=self.driver.find_element(*doc)
+            a=self.driver.find_element(*loc)
             actions = ActionChains(self.driver)
             actions.move_to_element(a).perform()
 

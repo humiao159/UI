@@ -1,7 +1,7 @@
 import shutil
 import os
 import platform
-from ui.Common.file_config import FileConfig
+from Common.file_config import FileConfig
 
 # 清除历史数据
 def delete_file(*path):

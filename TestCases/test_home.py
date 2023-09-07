@@ -3,9 +3,10 @@ import os, pytest, allure
 from ui.PageObjects.bofang_step import BoFang
 
 @allure.feature("直播间")
-class Enter():
+
+class TestEnter():
     @allure.story("获取标题")
-    def test_bofang(self,refresh):
-        result=BoFang(refresh).bofang()
-        assert result=='所罗门U23 VS 斐济U23'
+    def test_bofang(self,access_web):
+        result=BoFang(access_web).bofang()
+        assert result=='温哈努FC VS 奇文岛FC'
 

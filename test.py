@@ -15,7 +15,7 @@ a=driver.find_element('xpath','//*[@id="app"]/div[2]/div[2]/div/div[1]/img[1]')
 actions.move_to_element(a).perform()
 a.click()
 time.sleep(3)
-driver.find_element("xpath","/html/body/div[1]/div[2]/div[2]/div/div[1]/div[3]").click()
+driver.find_element("CLASS_NAME","zhibo").click()
 time.sleep(2)
  # 定位百度的输入框，输入python
 screenshot = pyautogui.screenshot(region=(400, 300, 980, 500))

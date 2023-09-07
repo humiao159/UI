@@ -28,6 +28,15 @@ type = sys.argv[1]
 """
 
 if __name__ == '__main__':
+
+
+    # 获取当前脚本所在的目录
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # 将项目根目录添加到 Python 搜索路径
+    project_root = os.path.abspath(os.path.join(script_dir, '..'))
+    sys.path.insert(0, project_root)
+
     status = KeepStrong().server_probing()
     input_list = sys.argv
     print(input_list)

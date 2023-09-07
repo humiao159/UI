@@ -6,7 +6,7 @@ class BoFang(BasePage):
 
         self.click(HC.zhibojian,doc="进入直播间")
 
-        text_title=self.get_element_text(HC.title,"获取到标题")
+        text_title=self.get_element_text(HC.title,doc="获取到标题")
 
         return text_title
 
