@@ -9,7 +9,7 @@ class FileConfig:
         # 获取电脑系统平台
         self.computer_sys = platform.system()
         # 项目路径
-        self.base_dir = os.path.split(os.path.split(os.path.abspath(__file__))[0])[0]
+        self.base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 
@@ -72,4 +72,4 @@ class FileConfig:
 
 
 if __name__ == "__main__":
-     print(FileConfig().get_path(type="logs"))
+     print(FileConfig().get_path('screenshots'))

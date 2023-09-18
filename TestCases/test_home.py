@@ -8,5 +8,6 @@ class TestEnter():
     @allure.story("获取标题")
     def test_bofang(self,access_web):
         result=BoFang(access_web).bofang()
-        assert result=='温哈努FC VS 奇文岛FC'
+        assert result=='FC岐阜 VS 宫崎棒牛鸟'
+
 

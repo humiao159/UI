@@ -21,7 +21,7 @@ class BasePage:
         self.driver = driver
 
     # 等待元素可见
-    def wait_elevisible(self, loc, timeout=120, frequency=0.5, doc=""):
+    def wait_elevisible(self, loc, timeout=30, poll_frequency=1, doc=""):
         """
         :param loc:
         :param timeout:
@@ -32,7 +32,7 @@ class BasePage:
         start_time = time.time()
         try:
 
-            WebDriverWait(self.driver, timeout, frequency).until(EC.visibility_of_element_located(loc))
+            WebDriverWait(self.driver, timeout, poll_frequency).until(EC.visibility_of_element_located(loc))
         except:
             logger.logging.exception("等待{}元素可见超时".format(loc))
             self.do_save_screenshot(doc)
@@ -44,7 +44,7 @@ class BasePage:
 
     #悬停在一个元素上
 
-    def stay(self,loc,doc=''):
+    def hover(self,loc,doc=''):
         try:
             a=self.driver.find_element(*loc)
             actions = ActionChains(self.driver)
@@ -59,6 +59,10 @@ class BasePage:
             logger.logging.info("查找{}的元素{}成功。".format(doc, loc))
             return True
 
+    #打开网页
+    def open_url(self,url):
+        self.driver.get(url=url)
+
 
 
     # 查找元素
@@ -69,9 +73,9 @@ class BasePage:
         :return:
         """
         try:
-            ele = self.driver.find_element(*loc)
+            ele = self.get_element(loc, doc)
         except:
-            logger.logging.exception("等待 {} 元素存在，失败！".format(loc))
+            logger.logging.exception("等待 {} 元素不存在，失败！".format(loc))
             self.do_save_screenshot(doc)
             return False
         else:
@@ -88,7 +92,7 @@ class BasePage:
         try:
             ele = self.driver.find_element(*loc)
         except:
-            logger.logging.exception("等待 {} 元素存在，失败！".format(loc))
+            logger.logging.exception("等待 {} 元素不存在，失败！".format(loc))
             self.do_save_screenshot(doc)
             raise
         else:
@@ -167,7 +171,7 @@ class BasePage:
         :return:
         """
         # 元素可见# 找它
-        time.sleep(0.5)
+        time.sleep(5)
         self.wait_elevisible(loc, timeout, frequency, doc)
         ele = self.get_element(loc, doc)
         try:
@@ -202,7 +206,7 @@ class BasePage:
             logger.logging.info("向{}元素点击成功".format(loc))
 
     # 获取元素文本值
-    def get_element_text(self, loc, timeout=8, frequency=0.5, doc=""):
+    def get_element_text(self, loc, timeout=20, frequency=0.5, doc=""):
         """
         :param loc:
         :param timeout:

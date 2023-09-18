@@ -1,6 +1,8 @@
 import pytest, time
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.common.by import By
+
 
 @pytest.fixture(scope="class")
 def access_web():
@@ -10,13 +12,16 @@ def access_web():
     # 实例化对象
     driver = webdriver.Chrome()
     # 访问网址
-    driver.get("https://www.dltkh.top/")
+    driver.get("https://www.kty296.com/pc2/#/home/index")
     # 窗口最大化
     driver.maximize_window()
     # 等待
     time.sleep(4)
+    #处理弹框
+    driver.find_element(By.XPATH,'//*[@id="app"]/div/div/section/div/div[1]/div/div/div[2]/div/div/button[1]').click()
     # 返回对象
     yield driver
+    time.sleep(5)
     # 后置：关闭浏览器
     driver.quit()
 

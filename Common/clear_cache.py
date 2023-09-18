@@ -1,7 +1,7 @@
 import shutil
 import os
 import platform
-from Common.file_config import FileConfig
+from ui.Common.file_config import FileConfig
 
 # 清除历史数据
 def delete_file(*path):
@@ -25,7 +25,16 @@ def delete_file(*path):
     shutil.rmtree(cache_dir)
 
 if __name__ == "__main__":
-    pass
+    path=r'C:\Users\CUSTOMIZEPC-24\PycharmProjects\ui\Outputs\allure_report'
+    a=os.listdir(path)
+    for num in range(len(a)):
+        if os.path.basename(os.path.join(path, a[num])) != "__init__.py":
+            try:
+                os.remove(os.path.join(path, a[num]))
+            except:
+                shutil.rmtree(os.path.join(path, a[num]))
+
+
 
 
 

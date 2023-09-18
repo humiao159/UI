@@ -12,7 +12,7 @@ if os.path.exists("{}\.pytest_cache".format(FileConfig().base_dir)) or os.path.e
                 FileConfig().get_path(type="pytest_report"), FileConfig().get_path(type="screenshots"))
 
 # 执行main文件
-pytest.main(["-s", "-v", "-m", "sj", "--html=Outputs/pytest_report/pytest.html", "--alluredir=Outputs/allure_report"])
+pytest.main(["-s", "-v", "-m", "sj", "--html=Outputs/pytest_report/pytest.html", "--alluredir=Outputs/allure_report",'-n','2'])
 
 # 生成allure报告
 if platform.system() == "Windows":
