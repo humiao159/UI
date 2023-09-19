@@ -1,1 +1,1 @@
-{}
+{"834c0cf788ac59bcddad40943dc8846f":{"statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1},"items":[{"uid":"d724c7d3b4e1fd71","status":"failed","statusDetails":"AssertionError: assert False == True","time":{"start":1695114054465,"stop":1695114070714,"duration":16249}}]}}

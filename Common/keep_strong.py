@@ -17,7 +17,7 @@ class KeepStrong():
             urls=data.get('URL',[])
             if not urls:
                 return False
-            status=[requests.get(url).status_code != 200 for url in urls]
+            status=[requests.get(url).status_code == 200 for url in urls]
             return all(status)
 
 

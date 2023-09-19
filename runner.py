@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 import sys
-from ui.Common.clear_cache import *
-from ui.Common.file_config import FileConfig
+from Common.clear_cache import *
+from Common.file_config import FileConfig
 import pytest
 import os
 
-from ui.Common.keep_strong import KeepStrong
-from ui.Common.global_var import GlobalVar
+
+from Common.keep_strong import KeepStrong
+from Common.global_var import GlobalVar
 """
 一、支持脚本运行方式
 1、支持运行所有的case
