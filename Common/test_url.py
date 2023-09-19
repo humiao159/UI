@@ -17,13 +17,3 @@ class Testurl():
                     return False
                 status=[requests.get(url).status_code != 200 for url in urls]
                 return all(status)
-
-
-
-
-
-
-if __name__ == '__main__':
-    # a=Testurl().test_server_url()
-    # assert a == True
-    print(sys.argv)
