@@ -11,12 +11,6 @@ class TestLogin():
 
 
 
-if __name__ == '__main__':
-    pytest.main(
-        ["-s", "-v", "-m", "sj", "--html=Outputs/pytest_report/pytest.html", "--alluredir=Outputs/allure_report", '-n',
-         '2'])
-
-
 
 
 

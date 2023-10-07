@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Tue Sep 19 17:00:54 CST 2023","Tue Sep 19 17:01:10 CST 2023","16249","TestCases","test_login","TestLogin","","","test_login",""
+"broken","Thu Oct 05 10:53:09 CST 2023","Thu Oct 05 10:53:23 CST 2023","13717","TestCases","test_login","TestLogin","","","test_login",""

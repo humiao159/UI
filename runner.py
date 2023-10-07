@@ -112,7 +112,7 @@ if __name__ == '__main__':
                 caseName = "./TestCases/{}".format(caseName)
                 # caseName="/Users/a58/Documents/58auto/web_ui_test/pytest_Web_Framework_V1/TestCases/{}".format(caseName)
                 pytest.main(
-                    ["-s", "-v", "--html=Outputs/pytest_report/pytest.html", "--alluredir=Outputs/allure_report",
+                    ["-s", "-v", "--html=Outputs/pytest_report/pytest.html", "--alluredir=Outputs/allure_report","--reruns", "3",
                      caseName])
 
             else:

@@ -16,7 +16,7 @@ def access_web():
     # 窗口最大化
     driver.maximize_window()
     # 等待
-    time.sleep(4)
+    time.sleep(10)
     #处理弹框
     driver.find_element(By.XPATH,'//*[@id="app"]/div/div/section/div/div[1]/div/div/div[2]/div/div/button[1]').click()
     # 返回对象
