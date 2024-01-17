@@ -45,3 +45,7 @@ if sum_of_differences > threshold:
 else:
     print("图像相同（不正确）")
 
+
+
+print('hello')
+
